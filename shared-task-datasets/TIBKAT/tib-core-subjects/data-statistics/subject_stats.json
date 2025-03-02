@@ -1,0 +1,126 @@
+{
+    "train": {
+        "Article": {
+            "de": {
+                "min": 1,
+                "max": 7,
+                "mean": 3.4
+            },
+            "en": {
+                "min": 1,
+                "max": 6,
+                "mean": 4.0
+            }
+        },
+        "Book": {
+            "de": {
+                "min": 1,
+                "max": 25,
+                "mean": 3.0
+            },
+            "en": {
+                "min": 1,
+                "max": 26,
+                "mean": 2.7
+            }
+        },
+        "Conference": {
+            "de": {
+                "min": 1,
+                "max": 16,
+                "mean": 3.8
+            },
+            "en": {
+                "min": 1,
+                "max": 16,
+                "mean": 2.8
+            }
+        },
+        "Report": {
+            "de": {
+                "min": 1,
+                "max": 15,
+                "mean": 2.8
+            },
+            "en": {
+                "min": 1,
+                "max": 13,
+                "mean": 2.9
+            }
+        },
+        "Thesis": {
+            "de": {
+                "min": 1,
+                "max": 19,
+                "mean": 4.3
+            },
+            "en": {
+                "min": 1,
+                "max": 19,
+                "mean": 3.8
+            }
+        }
+    },
+    "dev": {
+        "Article": {
+            "de": {
+                "min": 2,
+                "max": 2,
+                "mean": 2
+            },
+            "en": {
+                "min": 1,
+                "max": 6,
+                "mean": 3.6
+            }
+        },
+        "Book": {
+            "de": {
+                "min": 1,
+                "max": 15,
+                "mean": 3.0
+            },
+            "en": {
+                "min": 1,
+                "max": 39,
+                "mean": 2.7
+            }
+        },
+        "Conference": {
+            "de": {
+                "min": 1,
+                "max": 17,
+                "mean": 4.0
+            },
+            "en": {
+                "min": 1,
+                "max": 14,
+                "mean": 3.0
+            }
+        },
+        "Report": {
+            "de": {
+                "min": 1,
+                "max": 12,
+                "mean": 2.6
+            },
+            "en": {
+                "min": 1,
+                "max": 10,
+                "mean": 2.9
+            }
+        },
+        "Thesis": {
+            "de": {
+                "min": 1,
+                "max": 11,
+                "mean": 4.2
+            },
+            "en": {
+                "min": 1,
+                "max": 12,
+                "mean": 3.9
+            }
+        }
+    }
+}
