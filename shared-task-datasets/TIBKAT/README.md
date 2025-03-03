@@ -8,9 +8,9 @@ Since the TIBKAT dataset compiled for this shared task contains over 100,000 rec
 
 ## 📂 Repositories Included
 
-- [**all-subjects**](https://github.com/jd-coderepos/llms4subjects/tree/main/shared-task-datasets/TIBKAT/all-subjects) **dataset:** The `train dataset` contains 85,489 records, and the `dev dataset` contains 14,245 records. This dataset is a superset of the dataset linked below and includes all annotated records without restrictions.
+- [**all-subjects**](https://github.com/sciknoworg/llms4subjects/tree/main/shared-task-datasets/TIBKAT/all-subjects) **dataset:** The `train dataset` contains 85,489 records, and the `dev dataset` contains 14,245 records. This dataset is a superset of the dataset linked below and includes all annotated records without restrictions.
 
-- [**tib-core-subjects**](https://github.com/jd-coderepos/llms4subjects/tree/main/shared-task-datasets/TIBKAT/tib-core-subjects) **dataset:** The `train dataset` contains 41,902 records, and the `dev dataset` contains 6,980 records. In this subset, records are included only if at least one of the annotated GND subjects belongs to TIB's original core subject classification.
+- [**tib-core-subjects**](https://github.com/sciknoworg/llms4subjects/tree/main/shared-task-datasets/TIBKAT/tib-core-subjects) **dataset:** The `train dataset` contains 41,902 records, and the `dev dataset` contains 6,980 records. In this subset, records are included only if at least one of the annotated GND subjects belongs to TIB's original core subject classification.
 
 Participants can choose between the two datasets based on their project needs—whether to work with the larger, more comprehensive set or focus on a smaller, more manageable subset of records within TIB’s core subject classes for subject indexing.
 
@@ -18,7 +18,7 @@ Each dataset folder is organized into two directories: `data`, which contains th
 
 ## 🧐 A Guide to Reading TIBKAT Records
 
-Each TIBKAT technical record in the repositories is provided in `json-ld` format. You can view an example English record [here](https://github.com/jd-coderepos/llms4subjects/blob/main/shared-task-datasets/TIBKAT/all-subjects/data/train/Article/en/3A1499846525.jsonld) and an example German record [here](https://github.com/jd-coderepos/llms4subjects/blob/main/shared-task-datasets/TIBKAT/all-subjects/data/train/Article/de/3A168396733X.jsonld). These files contain various property annotations, with the three most relevant to **LLMs4Subjects** being `title`, `abstract`, and `dcterms:subject`. Participants are free to use other properties as needed. This guide provides an overview of how to interpret a TIBKAT record, focusing on the `dcterms:subject` property.
+Each TIBKAT technical record in the repositories is provided in `json-ld` format. You can view an example English record [here](https://github.com/sciknoworg/llms4subjects/blob/main/shared-task-datasets/TIBKAT/all-subjects/data/train/Article/en/3A1499846525.jsonld) and an example German record [here](https://github.com/sciknoworg/llms4subjects/blob/main/shared-task-datasets/TIBKAT/all-subjects/data/train/Article/de/3A168396733X.jsonld). These files contain various property annotations, with the three most relevant to **LLMs4Subjects** being `title`, `abstract`, and `dcterms:subject`. Participants are free to use other properties as needed. This guide provides an overview of how to interpret a TIBKAT record, focusing on the `dcterms:subject` property.
 
 ### [The `dcterms:subject` Property](#how-to-subjects)
 
@@ -39,5 +39,3 @@ The `dcterms:subject` property (often represented as `<dc:subject>` in XML or si
 ### Conclusion
 
 Understanding the `dcterms:subject` property within TIBKAT records is crucial for researchers, librarians, and anyone working on categorizing or finding resources by subject. By focusing on this property, users can gain insights into the content and relevance of the resources cataloged in the TIBKAT system.
-
-**⚠️ Note:** An additional `subject` property appears in records. This property and its values are not relevant to the scope of the **LLMs4Subjects** shared task. Participants are instructed not to use this property as a signal in training systems, as it will not be included in the test dataset during the evaluation phase.

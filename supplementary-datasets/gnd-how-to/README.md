@@ -144,7 +144,7 @@ Understanding the structure of these records is crucial for those involved in li
 ###### READING THREE OTHER EXAMPLE RECORDS
 
 
-[Example 1](https://github.com/jd-coderepos/llms4subjects/blob/main/gnd-how-to/records/record-eg1) Sachbegriff Record Summary
+[Example 1](records/record-eg1) Sachbegriff Record Summary
 
 Subject Heading (`<datafield>` with tag `150`, where `<subfield code="a">` specifies the subject heading)
 - **Name:** Viehhändlersprache
@@ -161,7 +161,7 @@ Context:
 The record highlights Viehhändlersprache's role as a cultural and linguistic artifact, reflecting the mixing of linguistic elements in professional and social contexts among cattle traders in specific regions of Germany.
 
 
-[Example 2](https://github.com/jd-coderepos/llms4subjects/blob/main/gnd-how-to/records/record-eg2) Sachbegriff Record Summary
+[Example 2](records/record-eg2) Sachbegriff Record Summary
 
 Subject Heading (`<datafield>` with tag `150`, where `<subfield code="a">` specifies the subject heading)
 - **Name:** Janus-Pressen-Schrift
@@ -178,7 +178,7 @@ Context:
 This record highlights the Janus-Pressen-Schrift as a significant contribution to the art of typography, reflecting the collaboration between Walter Tiemann, a prominent type designer, and the Gebr. Klingspor type foundry. The creation year mentioned is 1907, situating the typeface in the early 20th century, a period of innovation and artistic exploration in type design.
 
 
-[Example 3](https://github.com/jd-coderepos/llms4subjects/blob/main/gnd-how-to/records/record-eg3) Sachbegriff Record Summary
+[Example 3](records/record-eg3) Sachbegriff Record Summary
 
 Subject Heading (`<datafield>` with tag `150`, where `<subfield code="a">` specifies the subject heading)
 - **Name:** Berufsfachschule für Massage
@@ -197,7 +197,7 @@ This record points out the educational framework and specialization of vocationa
 
 ### III] MARC 21 tags meaning
 
-The following [script](https://github.com/jd-coderepos/llms4subjects/blob/main/gnd-how-to/scripts/print-unique-MARC21-codes.py) reads all records in a GND Sachbegriff file and prints out the unique MARC21 tags seen. The table below shows the set of 36 unique MARC21 tags seen in a recent download of a GND Sachbegriff file.
+The following [script](scripts/print-unique-MARC21-codes.py) reads all records in a GND Sachbegriff file and prints out the unique MARC21 tags seen. The table below shows the set of 36 unique MARC21 tags seen in a recent download of a GND Sachbegriff file.
 
 | MARC 21 data field tags | Description                                           | Link |
 |--------------|-------------------------------------------------------|------|
@@ -243,5 +243,4 @@ Data fields with tags `150` and `550` can be seen as central to interpreting a G
 
 ### IV] Train an LLM on the GND
 
-Refer to this [GUIDE](https://github.com/jd-coderepos/llms4subjects/blob/main/gnd-how-to/train-an-llm.md) for a step-by-step overview on training an LLM with the GND.
-
+Refer to this [GUIDE](train-an-llm.md) for a step-by-step overview on training an LLM with the GND.
