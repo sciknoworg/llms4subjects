@@ -14,11 +14,15 @@ For the test dataset provided, the participant's systems should predict and clas
 
 ##### Output Format
 
-The expected output from participants should be a simple list of formatted Subject domains as a list in `json` format. Each participant must submit their predictions in a file named identically to the corresponding test file, but containing only the predicted subject domains as a list in a json file.
+The expected output from participants should be a simple list of formatted domains as a list in `json` format. Each participant must submit their predictions in a file named identically to the corresponding test file, but containing only the predicted subject domains as a list in a json file.
 
 ##### Output Example
 
-A sample output file can be found in this repository. Refer to the following link: [Task1-3A168396733X.json](Task1-3A168396733X.json).
+We use an example training file to illustrate this. 
+
+Consider  [shared-task-datasets/TIBKAT/all-subjects/data/train/Book/de/3A01265597X.jsonld](../shared-task-datasets/TIBKAT/all-subjects/data/train/Book/de/3A01265597X.jsonld),
+
+A sample output file can be found in this repository. Refer to the following link: [3A01265597X.json](3A01265597X.json).
 
 ### Task 2 Overview Recap 
 
@@ -46,6 +50,6 @@ The expected output from participants should be a simple list of `gnd` subject t
 
 ###### Output Example
 
-A sample output file can be found in this repository. Refer to the following link: [submission-format/3A168396733X.json](Task2-3A168396733X.json).
+A sample output file can be found in this repository. Refer to the following link: [submission-format/3A168396733X.json](3A168396733X.json).
 
 Each output file must include the top 50 GND tag predictions made by your system, arranged in descending order based on model confidence. This order is crucial, as evaluations will be conducted using top-k ranking methods. Ensure that the tags predicted with the highest confidence are listed at the top.

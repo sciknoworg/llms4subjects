@@ -5,7 +5,8 @@
 The **LLMs4Subjects** shared task provides participants with two main data files for developing LLM-based solutions:
 
 1. **GND Subjects Taxonomy**: A comprehensive knowledge base of GND subjects, serving as a foundational resource for LLMs.
-2. **Training and Development Datasets**: Technical records annotated with GND subjects, providing supervision signals for aligning LLMs.
+2. **Training and Development Dataset for Sub-Task 1**: Technical records (all-subjects only) annotated with domains, guiding the LLMs for classifying the records.
+2. **Training and Development Datasets for Sub-Task 2**: Technical records (all-subjects and tib-core-subjects) annotated with GND subjects, providing supervision signals for aligning LLMs.
 
 These datasets are organized into repositories, where participants can visit and download the corresponding GND subjects file or folders containing annotated technical records.
 
