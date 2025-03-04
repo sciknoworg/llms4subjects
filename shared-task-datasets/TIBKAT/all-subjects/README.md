@@ -55,4 +55,31 @@ The table below shows the minimum, maximum, and mean length of abstracts in diff
 |        | Thesis      | de       | 8   | 3,325| 170.5 |
 |        |             | en       | 8   | 1,133| 185.9 |
 
+## TIBKAT Record Domain's Statistics
+
+The table below presents the minimum, maximum, and average number of domains per record in the all-subjects data collection for **Sub-Task 1 – TIBKAT Multi-Domain Classification**:
+
+| Split  | Record Type | Language | Min | Max | Mean |
+|--------|-------------|----------|-----|-----|------|
+| Train  | Article     | de       | 1   | 3   | 1.7  |
+|        |             | en       | 1   | 4   | 1.4  |
+|        | Book        | de       | 1   | 5   | 1.5  |
+|        |             | en       | 1   | 5   | 1.4  |
+|        | Conference  | de       | 1   | 5   | 1.4  |
+|        |             | en       | 1   | 4   | 1.3  |
+|        | Report      | de       | 1   | 5   | 1.5  |
+|        |             | en       | 1   | 6   | 1.5  |
+|        | Thesis      | de       | 1   | 6   | 1.4  |
+|        |             | en       | 1   | 6   | 1.4  |
+| Dev    | Article     | de       | 1   | 1   | 1    |
+|        |             | en       | 1   | 4   | 1.4  |
+|        | Book        | de       | 1   | 5   | 1.5  |
+|        |             | en       | 1   | 5   | 1.4  |
+|        | Conference  | de       | 1   | 5   | 1.5  |
+|        |             | en       | 1   | 4   | 1.3  |
+|        | Report      | de       | 1   | 4   | 1.5  |
+|        |             | en       | 1   | 4   | 1.5  |
+|        | Thesis      | de       | 1   | 4   | 1.4  |
+|        |             | en       | 1   | 7   | 1.4  |
+
 For more insights into dataset statistics, visit the `data-statistics` subfolder. The dataset can be downloaded from the `data` subfolder.

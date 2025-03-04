@@ -14,48 +14,48 @@
         },
         "Book": {
             "de": {
-                "min": 0,
+                "min": 1,
                 "max": 5,
                 "mean": 1.5
             },
             "en": {
-                "min": 0,
+                "min": 1,
                 "max": 5,
                 "mean": 1.4
             }
         },
         "Conference": {
             "de": {
-                "min": 0,
+                "min": 1,
                 "max": 5,
                 "mean": 1.4
             },
             "en": {
-                "min": 0,
+                "min": 1,
                 "max": 4,
                 "mean": 1.3
             }
         },
         "Report": {
             "de": {
-                "min": 0,
+                "min": 1,
                 "max": 5,
                 "mean": 1.5
             },
             "en": {
-                "min": 0,
+                "min": 1,
                 "max": 6,
                 "mean": 1.5
             }
         },
         "Thesis": {
             "de": {
-                "min": 0,
+                "min": 1,
                 "max": 6,
                 "mean": 1.4
             },
             "en": {
-                "min": 0,
+                "min": 1,
                 "max": 6,
                 "mean": 1.4
             }
@@ -76,12 +76,12 @@
         },
         "Book": {
             "de": {
-                "min": 0,
+                "min": 1,
                 "max": 5,
                 "mean": 1.5
             },
             "en": {
-                "min": 0,
+                "min": 1,
                 "max": 5,
                 "mean": 1.4
             }
@@ -105,19 +105,19 @@
                 "mean": 1.5
             },
             "en": {
-                "min": 0,
+                "min": 1,
                 "max": 4,
                 "mean": 1.5
             }
         },
         "Thesis": {
             "de": {
-                "min": 0,
+                "min": 1,
                 "max": 4,
                 "mean": 1.4
             },
             "en": {
-                "min": 0,
+                "min": 1,
                 "max": 7,
                 "mean": 1.4
             }

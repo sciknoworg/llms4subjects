@@ -1,12 +1,17 @@
 # 📚 The **LLMs4Subjects** Shared Task Datasets
 
-## 🔍 About
+The LLMs4Subjects shared task consists of two sub-tasks: multi-domain classification of library records and subject indexing.
+
+1. **Sub-Task 1 - Multi-Domain Classification of Library Records**: Given a human-readable record, the system must classify it into one or more of the 28 predefined domains. The list of predefined subject domains can be found [here](https://terminology.tib.eu/ts/ontologies/linsearch/individuals?iri=https%3A%2F%2Fpurl.org%2Flinsearch).
+2. **Sub-Task 2 - Subject Indexing**: Given a human-readable record, the system must generate relevant subject suggestions that accurately reflect its content.
+
+## 🔍 About the Datasets
 
 The **LLMs4Subjects** shared task provides participants with two main data files for developing LLM-based solutions:
 
 1. **GND Subjects Taxonomy**: A comprehensive knowledge base of GND subjects, serving as a foundational resource for LLMs.
-2. **Training and Development Dataset for Sub-Task 1**: Technical records (all-subjects only) annotated with domains, guiding the LLMs for classifying the records.
-2. **Training and Development Datasets for Sub-Task 2**: Technical records (all-subjects and tib-core-subjects) annotated with GND subjects, providing supervision signals for aligning LLMs.
+2. **Training and Development Dataset for Sub-Task 1 - Multi-domain classification**: Technical records (all-subjects only) annotated with domains, guiding the LLMs for classifying the records.
+2. **Training and Development Datasets for Sub-Task 2 - Subject Indexing**: Technical records (all-subjects and tib-core-subjects) annotated with GND subjects, providing supervision signals for aligning LLMs.
 
 These datasets are organized into repositories, where participants can visit and download the corresponding GND subjects file or folders containing annotated technical records.
 
