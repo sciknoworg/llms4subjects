@@ -58,4 +58,4 @@ The table below shows the minimum, maximum, and mean length of abstracts in diff
 
 For more insights into dataset statistics, visit the `data-statistics` subfolder. The dataset can be downloaded from the `data` subfolder.
 
-**Note**: For **Sub-Task 1 – TIBKAT Multi-Domain Classification**, the **tib-core-subjects** collection will not be used. Instead, only the **all-subjects** collection should be utilized.
+**Note**: For **Subtask 1 – TIBKAT Multi-Domain Classification**, the **tib-core-subjects** collection will not be used. Instead, only the **all-subjects** collection should be utilized.

@@ -57,7 +57,7 @@ The table below shows the minimum, maximum, and mean length of abstracts in diff
 
 ## TIBKAT Record Domain's Statistics
 
-The table below presents the minimum, maximum, and average number of domains per record in the all-subjects data collection for **Sub-Task 1 – TIBKAT Multi-Domain Classification**:
+The table below presents the minimum, maximum, and average number of domains per record in the all-subjects data collection for **Subtask 1 – TIBKAT Multi-Domain Classification**:
 
 | Split  | Record Type | Language | Min | Max | Mean |
 |--------|-------------|----------|-----|-----|------|

@@ -12,9 +12,9 @@ Since the TIBKAT dataset compiled for this shared task contains over 100,000 rec
 
 - [**tib-core-subjects**](https://github.com/sciknoworg/llms4subjects/tree/main/shared-task-datasets/TIBKAT/tib-core-subjects) **dataset:** The `train dataset` contains 41,902 records, and the `dev dataset` contains 6,980 records. In this subset, records are included only if at least one of the annotated GND subjects belongs to TIB's original core subject classification.
 
-For Sub-task 1 - Multi-domain Classification, participants are required to use only the all-subjects dataset, as it encompasses all 28 predefined domains, providing systems with a broader distribution of data records. However, there are some exceptions. Specifically, a small subset of records does not include domain information in its metadata. Out of the 95,603 records in the train and development splits, only 278 records lack domain details. The list of these records can be found [here](all-subjects/data-statistics/Records_without_Domains.json).
+For Subtask 1 - Multi-domain Classification, participants are required to use only the all-subjects dataset, as it encompasses all 28 predefined domains, providing systems with a broader distribution of data records. However, there are some exceptions. Specifically, a small subset of records does not include domain information in its metadata. Out of the 95,603 records in the train and development splits, only 278 records lack domain details. The list of these records can be found [here](all-subjects/data-statistics/Records_without_Domains.json).
 
-For Sub-task 2 - Subject Indexing, participants can choose between the two datasets based on their project needs—whether to work with the larger, more comprehensive set or focus on a smaller, more manageable subset of records within TIB’s core subject classes for subject indexing.
+For Subtask 2 - Subject Indexing, participants can choose between the two datasets based on their project needs—whether to work with the larger, more comprehensive set or focus on a smaller, more manageable subset of records within TIB’s core subject classes for subject indexing.
 
 Each dataset folder is organized into two directories: `data`, which contains the actual dataset files, and `data-statistics`, which provides detailed statistical analyses on various aspects of the dataset.
 
@@ -25,17 +25,17 @@ Each TIBKAT technical record in the repositories is provided in `json-ld` format
 ### Understanding the Subject Properties
 
 
-Each TIBKAT technical record contains the properties `subject` and `dcterms:subject`, which describes the domains and topics covered by a given resource. These properties are essential for ensuring that systems perform effectively in both Sub-task 1 and Sub-task 2.
+Each TIBKAT technical record contains the properties `subject` and `dcterms:subject`, which describes the domains and topics covered by a given resource. These properties are essential for ensuring that systems perform effectively in both Subtask 1 and Subtask 2.
 
-#### [The TIBKAT Domain Property for Sub-Task 1 - Multi-domain Classification](#how-to-domains)
+#### [The TIBKAT Domain Property for Subtask 1 - Multi-domain Classification](#how-to-domains)
 
 The `subject` property includes keywords, phrases, or classification codes that reflect the content. Subject annotations in TIBKAT records are provided by a team of 17 expert subject specialists, covering 28 different subjects, including:
 
 - Architecture, Civil Engineering, Biochemistry, Biology, Chemistry, Chemical Engineering, Electrical Engineering, Energy Technology, Educational Science, Earth Sciences, History, Information Technology, Literary Studies and Linguistics, Mechanical Engineering, Mathematics, Medical Technology, Plant Sciences, Philosophy, Physics, Law, Study of Religions, Social Sciences, Sports Sciences, Theology, Environmental Engineering, Traffic Engineering, Materials Science, and Economics.
 
-For this edition of the shared task and specifically for Sub-task 1, only domains related to Fachsystematik LinSearch should be considered. More information about Fachsystematik LinSearch can be found [here](https://terminology.tib.eu/ts/ontologies/linsearch).
+For this edition of the shared task and specifically for Subtask 1, only domains related to Fachsystematik LinSearch should be considered. More information about Fachsystematik LinSearch can be found [here](https://terminology.tib.eu/ts/ontologies/linsearch).
 
-#### [The `dcterms:subject` Property for Sub-Task 2 - Subject Indexing](#how-to-subjects)
+#### [The `dcterms:subject` Property for Subtask 2 - Subject Indexing](#how-to-subjects)
 
 The `dcterms:subject` property (often represented as `<dc:subject>` in XML or similar formats) describes the subjects or topics covered by the resource. 
 
