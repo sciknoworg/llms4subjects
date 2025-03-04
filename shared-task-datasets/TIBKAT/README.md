@@ -12,7 +12,7 @@ Since the TIBKAT dataset compiled for this shared task contains over 100,000 rec
 
 - [**tib-core-subjects**](https://github.com/sciknoworg/llms4subjects/tree/main/shared-task-datasets/TIBKAT/tib-core-subjects) **dataset:** The `train dataset` contains 41,902 records, and the `dev dataset` contains 6,980 records. In this subset, records are included only if at least one of the annotated GND subjects belongs to TIB's original core subject classification.
 
-For Sub-task 1, participants are required to use only the all-subjects dataset, as it encompasses all 28 predefined domains, providing systems with a broader distribution of data records. However, there are some exceptions. Specifically, a small subset of records does not include domain information in its metadata. Out of the 95,603 records in the train and development splits, only 278 records lack domain details. The list of these records can be found [here](all-subjects/data-statistics/Records_without_Domains.json)
+For Sub-task 1, participants are required to use only the all-subjects dataset, as it encompasses all 28 predefined domains, providing systems with a broader distribution of data records. However, there are some exceptions. Specifically, a small subset of records does not include domain information in its metadata. Out of the 95,603 records in the train and development splits, only 278 records lack domain details. The list of these records can be found [here](all-subjects/data-statistics/Records_without_Domains.json).
 
 For Sub-task 2, participants can choose between the two datasets based on their project needs—whether to work with the larger, more comprehensive set or focus on a smaller, more manageable subset of records within TIB’s core subject classes for subject indexing.
 
@@ -51,4 +51,4 @@ The `dcterms:subject` property (often represented as `<dc:subject>` in XML or si
 
 ### Conclusion
 
-Understanding the `dcterms:subject` property within TIBKAT records is crucial for researchers, librarians, and anyone working on categorizing or finding resources by subject. By focusing on this property, users can gain insights into the content and relevance of the resources cataloged in the TIBKAT system.
+Understanding the `dcterms:subject` and `subject` property within TIBKAT records is crucial for researchers, librarians, and anyone working on categorizing or finding resources by subject. By focusing on this property, users can gain insights into the content and relevance of the resources cataloged in the TIBKAT system.
