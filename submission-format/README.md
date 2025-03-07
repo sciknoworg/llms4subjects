@@ -52,4 +52,4 @@ The expected output from participants should be a simple list of `gnd` subject t
 
 A sample output file can be found in this repository. Refer to the following link: [submission-format/3A168396733X.json](3A168396733X.json).
 
-Each output file must include the top 50 GND tag predictions made by your system, arranged in descending order based on model confidence. This order is crucial, as evaluations will be conducted using top-k ranking methods. Ensure that the tags predicted with the highest confidence are listed at the top.
+Each output file must include the top 20 GND tag predictions made by your system, arranged in descending order based on model confidence. This order is crucial, as evaluations will be conducted using top-k ranking methods. Ensure that the tags predicted with the highest confidence are listed at the top.

@@ -6,15 +6,15 @@ This README provides instructions and information regarding the evaluation proce
 
 A portion of the TIBKAT collection has been designated as the blind test dataset. In this dataset, subject heading annotations are hidden. This [folder](../shared-task-datasets/TIBKAT/all-subjects/data/test) contains the test dataset for all-subjects, while the [folder](../shared-task-datasets/TIBKAT/tib-core-subjects/data/test) contains the test dataset related to tib-core-subject.
 
-Participants must submit a ranked list of the top 50 relevant subjects for each record, ordered by descending relevance.
+Participants must submit a ranked list of the top 20 relevant subjects for each record, ordered by descending relevance.
 
 ## 📊 Quantitative Evaluation
 
 The performance of submitted systems will be assessed using the following metrics:
 
-1. **Average Precision@k** for k = 5, 10, 15, 20, 25, 30, 35, 40, 45, 50
-2. **Average Recall@k** for k = 5, 10, 15, 20, 25, 30, 35, 40, 45, 50
-3. **Average F1-score@k** for k = 5, 10, 15, 20, 25, 30, 35, 40, 45, 50
+1. **Average Precision@k** for k = 5, 10, 15, 20
+2. **Average Recall@k** for k = 5, 10, 15, 20
+3. **Average F1-score@k** for k = 5, 10, 15, 20
 
 Evaluation results will be presented at varying levels of granularity to provide comprehensive insights:
 

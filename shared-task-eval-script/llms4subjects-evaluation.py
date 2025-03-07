@@ -453,6 +453,6 @@ if __name__ == "__main__":
         predicted_dict = update_dir_structure(true_dict, predicted_dict)
     
     print('\nEvaluating the predicted GND labels...')
-    list_k = [k for k in range(5, 55, 5)]
+    list_k = [k for k in range(5, 25, 5)]
     evaluate_and_save_to_excel(results_dir, f'{team_name}_evaluation_metrics.xlsx', true_dict, predicted_dict, list_k)
     print(f'\nFile containing the evaluation metrics score is saved at location: {results_dir}/{team_name}_evaluation_metrics.xlsx')
