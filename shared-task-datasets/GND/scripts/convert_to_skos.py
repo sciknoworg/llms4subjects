@@ -66,11 +66,6 @@ def convert_to_skos_graph(json_filepath, rdf_filepath, rdf_format='turtle'):
 
     graph.serialize(rdf_filepath, format=rdf_format)
 
-
-# Convert TIB Core subjects to SKOS
-convert_to_skos_graph('../dataset/GND-Subjects-tib-core.json',
-                      '../dataset/GND-Subjects-tib-core-skos.ttl')
-
 # Convert all subjects to SKOS
 convert_to_skos_graph('../dataset/GND-Subjects-all.json',
                       '../dataset/GND-Subjects-all-skos.ttl')

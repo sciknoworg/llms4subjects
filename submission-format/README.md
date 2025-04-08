@@ -1,6 +1,6 @@
 ## Submission Guidelines 📄
 
-### Task 1 Overview Recap
+### Subtask 1 Overview Recap
 
 Given a human-readable record, the developed system must classify it into one or more of the 28 predefined domains. The primary target of this task is to predict the values of `subject` property, where the available annotations will be hidden in the test dataset.
 
@@ -24,13 +24,13 @@ Consider  [shared-task-datasets/TIBKAT/all-subjects/data/train/Book/de/3A0126559
 
 A sample output file can be found in this repository. Refer to the following link: [3A01265597X.json](3A01265597X.json).
 
-### Task 2 Overview Recap 
+### Subtask 2 Overview Recap 
 
 The primary focus of LLMs4Subjects is on predicting the values of the `dcterms:subject` property, where the available annotations will be hidden in the test dataset. The list of GND subject term IDs predicted for `dcterms:subject` is treated as the subject classification of technical records.
 
 #### Data for Evaluation 📚
 
-During the evaluation phase, starting in June, participants will receive a dataset consisting of technical records similar to those found in the training set, but with the subject classifications removed, i.e. the `dcterms:subject` property will be an empty list.
+During the evaluation phase, participants will receive a dataset consisting of technical records similar to those found in the training set, but with the subject classifications removed, i.e. the `dcterms:subject` property will be an empty list.
 
 We use an example training file to illustrate this. 
 

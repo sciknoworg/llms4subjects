@@ -12,9 +12,7 @@ Additionally, the `scripts` folder in this repository includes the Python script
 
 The GND subjects taxonomy should be utilized by participants as a comprehensive knowledge base of subjects used for tagging TIB technical records.
 
-In addition to the json-Exports of the GND, the German National Library (DNB) has created an **unofficial** Export of the GND from its native raw format into SKOS
-for the use within this shared Task. These exports are aligned to the other files as a smaller version in the file `GND-Subjects-tib-core_dnb-skos.ttl` and the
-full version with all subject terms (`GND Sachbegriff`) in the file `GND-Subjects-all_dnb-skos.ttl`.
+In addition to the json-Exports of the GND, the German National Library (DNB) has created an **unofficial** Export of the GND from its native raw format into SKOS for the use within this shared Task. These exports are aligned to the other files as a full version with all subject terms (`GND Sachbegriff`) in the file `GND-Subjects-all_dnb-skos.ttl`.
 
 Remarks on the SKOS-Mapping:
 

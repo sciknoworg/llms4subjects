@@ -4,7 +4,7 @@ This repository provides formatted, human-readable [GND](https://www.dnb.de/EN/P
 
 ### GND Subject Classification
 
-All GND subjects are categorized based on the concepts they describe. A comprehensive list of all subject categories can be viewed in this [PDF](https://wiki.dnb.de/download/attachments/90411323/gndSyst.pdf). A [JSON](../dataset/gnd-classification-for-gnd-subjects.json) file has been created from this PDF, containing all subject categories and their names, as well as an indication of whether a subject belongs to the TIB Core list. These subject categories are essential for disambiguating TIBKAT records and filtering TIBKAT records to include only those related to TIB Core subjects.
+All GND subjects are categorized based on the concepts they describe. A comprehensive list of all subject categories can be viewed in this [PDF](https://wiki.dnb.de/download/attachments/90411323/gndSyst.pdf). A [JSON](../dataset/gnd-classification-for-gnd-subjects.json) file has been created from this PDF, containing all subject categories and their names, as well as an indication of whether a subject belongs to the TIB Core list.
 
 ### Accessing and Downloading GND Authority Data
 
@@ -32,13 +32,6 @@ subject_gnd_filepath = '../authorities-gnd-sachbegriff_dnbmarc_20240213.mrc.xml'
 ```python
 #All GND Subject codes 
 gnd_subjects = read_json_file('../dataset/gnd-classification-for-gnd-subjects.json')
-```
-
-Additionally, you can filter the subjects to include only those part of the TIB Core list by setting the boolean variable as follows:
-
-```python
-#Whether to include all GND subjects or only TIB Core subjects
-all_subjects = False
 ```
 
 #### **Step 2: Executing the Script**

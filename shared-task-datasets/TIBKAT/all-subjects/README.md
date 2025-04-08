@@ -63,15 +63,15 @@ The table below presents the minimum, maximum, and average number of domains per
 |--------|-------------|----------|-----|-----|------|
 | Train  | Article     | de       | 1   | 3   | 1.7  |
 |        |             | en       | 1   | 4   | 1.4  |
-|        | Book        | de       | 1   | 5   | 1.5  |
-|        |             | en       | 1   | 5   | 1.4  |
+|        | Book        | de       | 1   | 6   | 1.5  |
+|        |             | en       | 1   | 6   | 1.4  |
 |        | Conference  | de       | 1   | 5   | 1.4  |
 |        |             | en       | 1   | 4   | 1.3  |
 |        | Report      | de       | 1   | 5   | 1.5  |
 |        |             | en       | 1   | 6   | 1.5  |
 |        | Thesis      | de       | 1   | 6   | 1.4  |
 |        |             | en       | 1   | 6   | 1.4  |
-| Dev    | Article     | de       | 1   | 1   | 1    |
+| Dev    | Article     | de       | 1   | 3   | 2    |
 |        |             | en       | 1   | 4   | 1.4  |
 |        | Book        | de       | 1   | 5   | 1.5  |
 |        |             | en       | 1   | 5   | 1.4  |
