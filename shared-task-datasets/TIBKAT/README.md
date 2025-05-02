@@ -6,9 +6,9 @@ TIB subject matter experts index the library’s technical records based on the 
 
 ## 📂 Repositories Included
 
-- [**all-subjects**](https://github.com/sciknoworg/llms4subjects/tree/main/shared-task-datasets/TIBKAT/all-subjects) **dataset:** The `train dataset` contains 98,801 records, and the `dev dataset` contains 19,952 records. This dataset is a superset of the dataset linked below and includes all annotated records without restrictions.
+- [**all-subjects**](https://github.com/sciknoworg/llms4subjects/tree/main/shared-task-datasets/TIBKAT/all-subjects) **dataset:** The `train dataset` contains 90,452 records, and the `dev dataset` contains 19,949 records. This dataset is a superset of the dataset linked below and includes all annotated records without restrictions.
 
-For Subtask 1 - Multi-domain Classification, participants are required to use all-subjects dataset, as it encompasses all 28 predefined domains, providing systems with a broader distribution of data records. However, there are some exceptions. Specifically, a small subset of records does not include domain information in its metadata. Out of the 118,753 records in the train and development splits, only 335 records lack domain details. The list of these records can be found [here](all-subjects/data-statistics/Records_without_Domains.json).
+For Subtask 1 - Multi-domain Classification, participants are required to use all-subjects dataset, as it encompasses all 28 predefined domains, providing systems with a broader distribution of data records. However, there are some exceptions. Specifically, a small subset of records does not include domain information in its metadata. Out of the 110,401 records in the train and development splits, only 314 records lack domain details. The list of these records can be found [here](all-subjects/data-statistics/Records_without_Domains.json).
 
 For Subtask 2 - Subject Indexing, participants are required to use all-subject dataset for subject indexing.
 
