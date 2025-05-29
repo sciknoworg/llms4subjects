@@ -1,10 +1,10 @@
-## Submission Guidelines 📄
+## Submission Guidelines
 
 ### Subtask 1 Overview Recap
 
 Given a human-readable record, the developed system must classify it into one or more of the 28 predefined domains. The primary target of this task is to predict the values of `subject` property, where the available annotations will be hidden in the test dataset.
 
-#### Data For Evaluation 📚
+#### Data For Evaluation
 
 During the evaluation phase, the participants will receive the test dataset consisting of technical records similar to those found in the training set, but with the subject domains removed, i.e. the `subject` property will be removed.
 
@@ -53,3 +53,39 @@ The expected output from participants should be a simple list of `gnd` subject t
 A sample output file can be found in this repository. Refer to the following link: [submission-format/3A168396733X.json](3A168396733X.json).
 
 Each output file must include the top 20 GND tag predictions made by your system, arranged in descending order based on model confidence. This order is crucial, as evaluations will be conducted using top-k ranking methods. Ensure that the tags predicted with the highest confidence are listed at the top.
+
+### Codabench Competition Submission Guidelines
+
+To streamline the evaluation process, we have set up a Codabench competition. Participants are required to submit their predictions through this platform to be ranked on the leaderboard and compare results with other teams.
+
+Participants can register in the competition using the following link: [https://www.codabench.org/competitions/8373](https://www.codabench.org/competitions/8373)
+
+#### Submission Format
+Participants must submit their predictions by following the structure described below:
+
+1. The main folder should contain two subfolders: subtask_1 and subtask_2, corresponding to each subtask.
+2. Each of these subfolders must follow the same folder structure as provided in the training dataset.
+3. Once the structure is in place, zip the two folders together and submit the resulting archive to Codabench.
+
+##### Folder Structure
+```
+team-name/
+    ├── subtask_1/
+    │   ├── Article/
+    │   │   ├── en/
+    │   │   └── de/
+    │   ├── Book/
+    │   ├── Conference/
+    │   ├── Report/
+    │   └── Thesis/
+    └── subtask_2/
+        ├── Article/
+        │   ├── en/
+        │   └── de/
+        ├── Book/
+        ├── Conference/
+        ├── Report/
+        └── Thesis/
+```
+
+A sample codabench submission can be found in this repository. Refer to the following link: [submission-format/team-germeval.zip](team-germeval.zip).
