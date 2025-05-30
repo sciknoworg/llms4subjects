@@ -47,26 +47,26 @@
             }
         },
         "test": {
-            "Total Record": 27,986,
+            "Total Record": 27998,
             "Article": {
                 "en": 423,
                 "de": 1
             },
             "Book": {
-                "de": 13554,
-                "en": 7598
+                "de": 13559,
+                "en": 7597
             },
             "Conference": {
                 "de": 908,
                 "en": 808
             },
             "Report": {
-                "de": 524,
+                "de": 525,
                 "en": 334
             },
             "Thesis": {
-                "de": 3003,
-                "en": 833
+                "de": 3006,
+                "en": 837
             }
         }
     },

@@ -26,6 +26,16 @@ The table below shows the number of records for each data split and record type:
 |        |             | en       | 215          |
 |        | Thesis      | de       | 1,404        |
 |        |             | en       | 574          |
+| Test   | Article     | en       | 423          |
+|        |             | de       | 1            |
+|        | Book        | de       | 13,559       |
+|        |             | en       | 7,597        |
+|        | Conference  | en       | 808          |
+|        |             | de       | 908          |
+|        | Report      | de       | 525          |
+|        |             | en       | 334          |
+|        | Thesis      | de       | 3,006        |
+|        |             | en       | 837          |
 
 
 ## 📝 Abstract Statistics
@@ -54,6 +64,16 @@ The table below shows the minimum, maximum, and mean length of abstracts in diff
 |        |             | en       | 8   | 534  | 93.7  |
 |        | Thesis      | de       | 8   | 3,325| 170.5 |
 |        |             | en       | 8   | 1,133| 185.9 |
+| Test   | Article     | de       | 186 | 186  | 186   |
+|        |             | en       | 16  | 513  | 155.8 |
+|        | Book        | de       | 8   | 1,731| 137.1 |
+|        |             | en       | 11  | 2,115| 172.2 |
+|        | Conference  | de       | 10  | 808  | 141.9 |
+|        |             | en       | 17  | 1,773| 175.0 |
+|        | Report      | de       | 10  | 551  | 119.2 |
+|        |             | en       | 11  | 829  | 99.4  |
+|        | Thesis      | de       | 6   | 1,705| 156.4 |
+|        |             | en       | 6   | 1,646| 183.4 |
 
 ## TIBKAT Record Domain's Statistics
 
@@ -81,5 +101,15 @@ The table below presents the minimum, maximum, and average number of domains per
 |        |             | en       | 1   | 4   | 1.5  |
 |        | Thesis      | de       | 1   | 4   | 1.4  |
 |        |             | en       | 1   | 7   | 1.4  |
+| Test   | Article     | de       | 2   | 2   | 2    |
+|        |             | en       | 1   | 4   | 1.5  |
+|        | Book        | de       | 1   | 7   | 1.4  |
+|        |             | en       | 1   | 5   | 1.4  |
+|        | Conference  | de       | 1   | 5   | 1.4  |
+|        |             | en       | 1   | 5   | 1.4  |
+|        | Report      | de       | 1   | 4   | 1.5  |
+|        |             | en       | 1   | 4   | 1.5  |
+|        | Thesis      | de       | 1   | 6   | 1.4  |
+|        |             | en       | 1   | 3   | 1.3  |
 
 For more insights into dataset statistics, visit the `data-statistics` subfolder. The dataset can be downloaded from the `data` subfolder.
