@@ -92,6 +92,27 @@ def recall(true_labels: list, pred_labels: list, k: int):
     intersection = true_set & pred_set
     return round(len(intersection) / len(true_set), 4)
 
+def rprec(true_labels: list, pred_labels: list, k: int):
+    """
+    Calculates R-Precision@k as in 
+    Manning, C. D., Raghavan, P., & Schütze, H. (2012). 
+    Introduction to Information Retrieval. In Introduction to Information Retrieval. 
+    Cambridge University Press. https://doi.org/10.1017/CBO9780511809071
+
+    Args:
+        true_labels (list): The list of true labels
+        pred_labels (list): The list of predicted labels
+        k (int): The value of K representing the top k values to consider
+
+    Returns:
+        float: R-Precision@k
+    """
+    true_set = set(true_labels)
+    pred_set = set(pred_labels[:k])
+    breakevenpoint = min(len(true_set), len(pred_set))
+    intersection = true_set & pred_set
+    return round(len(intersection) / breakevenpoint, 4)
+
 def f1(precision_k: float, recall_k: float):
     """
     Calculates the f1@k for the given precision@k and recall@k.
@@ -141,19 +162,22 @@ def evaluate_combined_record_type_language(true_dict: dict, predicted_dict: dict
                 #Calculating the recall and precision at k
                 recall_k = recall(true_labels, pred_labels, k)
                 precision_k = precision(true_labels, pred_labels, k)
+                rprec_k = rprec(true_labels, pred_labels, k)
                 
                 total_recall += recall_k
                 total_precision += precision_k
+                total_rprec += rprec_k
             
             #Averaging recall and precision and calculating the f1 score  
             avg_recall = total_recall / count if count else 0.0
             avg_precision = total_precision / count if count else 0.0
+            avg_rprec = total_rprec / count if count else 0.0
             avg_f1 = f1(avg_recall, avg_precision)
             
             #Saving the metrics score in the dictionary
             if record_type not in combined_metrics:
                 combined_metrics[record_type] = {}
-            combined_metrics[record_type][language] = {f'precision_{k}': avg_precision, f'recall_{k}': avg_recall, f'f1_{k}': avg_f1}
+            combined_metrics[record_type][language] = {f'precision_{k}': avg_precision, f'recall_{k}': avg_recall, f'rprec_{k}': avg_rprec, f'f1_{k}': avg_f1}
     
     return combined_metrics
 
@@ -193,15 +217,18 @@ def evaluate_record_type_level(true_dict: dict, predicted_dict: dict, k: int):
                 #Calculating the recall and precision at k
                 recall_k = recall(true_labels, pred_labels, k)
                 precision_k = precision(true_labels, pred_labels, k)
+                rprec_k = rprec(true_labels, pred_labels, k)
                 
                 metrics_score[record_type][f'recall_{k}'] += recall_k
                 metrics_score[record_type][f'precision_{k}'] += precision_k
+                metrics_score[record_type][f'rprec_{k}'] += rprec_k
             
     #Averaging recall and precision and calculating the f1 score
     for record_type, metrics in metrics_score.items():
         total_files = metrics['total_files']
         metrics[f'recall_{k}'] = metrics[f'recall_{k}'] / total_files if total_files else 0.0
         metrics[f'precision_{k}'] = metrics[f'precision_{k}'] / total_files if total_files else 0.0
+        metrics[f'rprec_{k}'] = metrics[f'rprec_{k}'] / total_files if total_files else 0.0
         metrics[f'f1_{k}'] = f1(metrics[f'recall_{k}'], metrics[f'precision_{k}'])
         
         #Deleting the total files key and value
@@ -245,15 +272,18 @@ def evaluate_language_level(true_dict: dict, predicted_dict: dict, k: int):
                 #Calculating the recall and precision at k
                 recall_k = recall(true_labels, pred_labels, k)
                 precision_k = precision(true_labels, pred_labels, k)
+                rprec_k = rprec(true_labels, pred_labels, k)
                 
                 metrics_score[language][f'recall_{k}'] += recall_k
                 metrics_score[language][f'precision_{k}'] += precision_k
+                metrics_score[language][f'rprec_{k}'] += rprec_k
             
     #Averaging recall and precision and calculating the f1 score
     for language, metrics in metrics_score.items():
         total_files = metrics['total_files']
         metrics[f'recall_{k}'] = metrics[f'recall_{k}'] / total_files if total_files else 0.0
         metrics[f'precision_{k}'] = metrics[f'precision_{k}'] / total_files if total_files else 0.0
+        metrics[f'rprec_{k}'] = metrics[f'rprec_{k}'] / total_files if total_files else 0.0
         metrics[f'f1_{k}'] = f1(metrics[f'recall_{k}'], metrics[f'precision_{k}'])
         
         #Deleting the total files key and value
