@@ -29,6 +29,34 @@ This shared task offers the research community an opportunity to creatively deve
 
 llms4subjects [at] gmail.com
 
+## 💡 Citation
+
+The recommended citation for this dataset resource is provided below. If you find this resource useful, please consider citing it.
+
+```bibtex
+@InProceedings{dsouza-EtAl:2025:SemEval2025,
+author    = {D'Souza, Jennifer and Sadruddin, Sameer and Israel, Holger and Begoin, Mathias and Slawig, Diana},
+title     = {SemEval-2025 Task 5: LLMs4Subjects - LLM-based Automated Subject Tagging for a National Technical Library's Open-Access Catalog},
+booktitle = {Proceedings of the 19th International Workshop on Semantic Evaluation (SemEval-2025)},
+month     = {August},
+year      = {2025},
+address   = {Vienna, Austria},
+publisher = {Association for Computational Linguistics},
+pages     = {1082--1095},
+url       = {https://aclanthology.org/2025.semeval2025-1.139}
+}
+```
+
+```bibtex
+@misc{D_Souza_The_GermEval_2025_2025,
+author = {D'Souza, Jennifer and Sadruddin, Sameer and Israel, Holger and Begoin, Mathias},
+month = march,
+title = {{The GermEval 2025 2nd LLMs4Subjects Shared Task Dataset}},
+url = {https://github.com/sciknoworg/llms4subjects},
+year = {2025}
+}
+```
+
 ## ⭐ Acknowledgements
 
 The **LLMs4Subjects** shared task, organized as GermEval 2025, is jointly supported by the [SCINEXT project](https://scinext-project.github.io/) (BMBF, German Federal Ministry of Education and Research, Grant ID: 01lS22070) and the [NFDI4DataScience initiative](https://www.nfdi4datascience.de/) (DFG, German Research Foundation, Grant ID: 460234259).

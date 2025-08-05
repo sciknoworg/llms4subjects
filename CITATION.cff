@@ -1,20 +1,21 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it using the following metadata."
-title: "The SemEval 2025 LLMs4Subjects Shared Task Dataset"
+title: "The GermEval 2025 2nd LLMs4Subjects Shared Task Dataset"
 version: "1.0.0"
 #doi: "10.1234/dataset-doi"  # Replace with the DOI if available
-type: dataset
+type: data
 authors:
   - family-names: "D'Souza"
     given-names: "Jennifer"
     orcid: "https://orcid.org/0000-0002-6616-9509"  # Optional
   - family-names: "Sadruddin"
     given-names: "Sameer"
+    orcid: "https://orcid.org/0009-0006-7990-9955"
   - family-names: "Israel"
     given-names: "Holger"
   - family-names: "Begoin"
     given-names: "Mathias"	
-date-released: "2024-10-03"
+date-released: "2025-03-08"
 url: "https://github.com/sciknoworg/llms4subjects"  # GitHub repository URL
 keywords:
   - "subject indexing"
