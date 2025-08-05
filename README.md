@@ -50,6 +50,7 @@ url       = {https://aclanthology.org/2025.semeval2025-1.139}
 ```bibtex
 @misc{D_Souza_The_GermEval_2025_2025,
 author = {D'Souza, Jennifer and Sadruddin, Sameer and Israel, Holger and Begoin, Mathias},
+doi = {10.5281/zenodo.16743609},
 month = mar,
 title = {{The GermEval 2025 2nd LLMs4Subjects Shared Task Dataset}},
 url = {https://github.com/sciknoworg/llms4subjects},

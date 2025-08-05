@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this dataset, please cite it using the following metadata."
 title: "The GermEval 2025 2nd LLMs4Subjects Shared Task Dataset"
 version: "1.0.0"
-#doi: "10.1234/dataset-doi"  # Replace with the DOI if available
+doi: "10.5281/zenodo.16743609"  # Replace with the DOI if available
 type: data
 authors:
   - family-names: "D'Souza"
@@ -24,5 +24,5 @@ keywords:
   - "digital libraries"
 license: "CC-BY-4.0"  
 repository-code: "https://github.com/sciknoworg/llms4subjects"
-#repository-artifact: "https://doi.org/10.5281/zenodo.1234567"  # DOI for the dataset, if stored in a repository like Zenodo
+repository-artifact: "https://doi.org/10.5281/zenodo.16743609"  # DOI for the dataset, if stored in a repository like Zenodo
 abstract: "To support the development of systems for the LLMs4Subjects shared task, we provide participants with two types of datasets: 1) Curated, human-readable form of the GND subjects taxonomy. and 2) A large-scale dataset of technical records from TIB’s open-access collection, annotated with GND subjects, available in both English and German."
