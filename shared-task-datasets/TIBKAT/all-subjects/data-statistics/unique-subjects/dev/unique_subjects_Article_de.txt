@@ -1,0 +1,3 @@
+gnd:4113456-4: Erdbebensicherheit
+gnd:4026801-9: Industrieanlage
+gnd:4068598-6: Erneuerbare Energien
