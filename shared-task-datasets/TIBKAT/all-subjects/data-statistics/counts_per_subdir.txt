@@ -1,0 +1,10 @@
+Article/de: 10
+Article/en: 1738
+Book/de: 55704
+Book/en: 44877
+Conference/de: 3693
+Conference/en: 6032
+Report/de: 2509
+Report/en: 2131
+Thesis/de: 14111
+Thesis/en: 5764

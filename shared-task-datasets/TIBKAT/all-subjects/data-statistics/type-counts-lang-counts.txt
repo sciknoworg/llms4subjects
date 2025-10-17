@@ -1,0 +1,10 @@
+Record Type Counts:
+Article: 1748
+Book: 100581
+Conference: 9725
+Report: 4640
+Thesis: 19875
+
+Language Distribution:
+de: 76027
+en: 60542
