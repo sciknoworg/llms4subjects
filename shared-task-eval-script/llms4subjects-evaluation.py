@@ -2,6 +2,7 @@ import argparse
 import os
 import sys
 import json
+import math
 import pandas as pd
 
 def read_json_file(filepath: str, encoding: str = 'utf-8'):
@@ -126,10 +127,34 @@ def f1(precision_k: float, recall_k: float):
     """
     if precision_k + recall_k == 0: return 0
     return round(2 * (precision_k * recall_k) / (precision_k + recall_k), 4)
+
+def dcg(scores):
+    """Compute Discounted Cumulative Gain."""
+    return sum(score / math.log2(idx + 2) for idx, score in enumerate(scores))
+
+def ndcg(true_labels, pred_labels, k=5):
+
+    #Check if pred labels are not empty
+    if not pred_labels:
+        return 0
+
+    # Assign relevance scores: score of 1 for each item in the reference list
+    relevance = {item: 1 for item in true_labels}
+
+    # Get relevance scores for predicted items up to rank k
+    predicted_scores = [relevance.get(item, 0) for item in pred_labels[:k]]
+
+    # Ideal DCG uses the best possible ranking up to k
+    ideal_scores = sorted(relevance.values(), reverse=True)[:k]
+
+    dcg_val = dcg(predicted_scores)
+    idcg_val = dcg(ideal_scores)
+
+    return dcg_val / idcg_val if idcg_val > 0 else 0.0
     
 def evaluate_combined_record_type_language(true_dict: dict, predicted_dict: dict, k: int):
     """
-    Calculates the evaluation metrics (Precision@k, Recall@k and F1@k) on the combined granularity level (record type and language) 
+    Calculates the evaluation metrics (ndcg@k, Precision@k, Recall@k and F1@k) on the combined granularity level (record type and language) 
     for the given true GND labels and predicted GND labels.
 
     Args:
@@ -148,8 +173,8 @@ def evaluate_combined_record_type_language(true_dict: dict, predicted_dict: dict
     for record_type, lang_dict in true_dict.items():
         for language, file_data in lang_dict.items():
             
-            #Aggregating the recall and precision for each record type and language combination
-            total_recall, total_precision = 0, 0
+            #Aggregating the ndcg, recall and precision for each record type and language combination
+            total_ndcg, total_recall, total_precision = 0, 0, 0
             
             #Total files for each combination
             count = len(file_data.keys())
@@ -159,31 +184,34 @@ def evaluate_combined_record_type_language(true_dict: dict, predicted_dict: dict
                 #Extracting the corresponding predicted GND labels
                 pred_labels = predicted_dict[record_type][language][f'{os.path.splitext(filename)[0]}.json']
                 
-                #Calculating the recall and precision at k
+                #Calculating the recall, precision, rprecision and ndcg at k
                 recall_k = recall(true_labels, pred_labels, k)
                 precision_k = precision(true_labels, pred_labels, k)
                 rprec_k = rprec(true_labels, pred_labels, k)
+                ndcg_k = ndcg(true_labels, pred_labels, k)
                 
                 total_recall += recall_k
                 total_precision += precision_k
                 total_rprec += rprec_k
+                total_ndcg += ndcg_k
             
-            #Averaging recall and precision and calculating the f1 score  
+            #Averaging recall, precision, rprecision and ndcg and calculating the f1 score  
             avg_recall = total_recall / count if count else 0.0
             avg_precision = total_precision / count if count else 0.0
             avg_rprec = total_rprec / count if count else 0.0
+            avg_ndcg = total_ndcg / count if count else 0.0
             avg_f1 = f1(avg_recall, avg_precision)
             
             #Saving the metrics score in the dictionary
             if record_type not in combined_metrics:
                 combined_metrics[record_type] = {}
-            combined_metrics[record_type][language] = {f'precision_{k}': avg_precision, f'recall_{k}': avg_recall, f'rprec_{k}': avg_rprec, f'f1_{k}': avg_f1}
+            combined_metrics[record_type][language] = {f'ndcg_{k}': avg_ndcg, f'precision_{k}': avg_precision, f'recall_{k}': avg_recall, f'rprec_{k}': avg_rprec, f'f1_{k}': avg_f1}
     
     return combined_metrics
 
 def evaluate_record_type_level(true_dict: dict, predicted_dict: dict, k: int):
     """
-    Calculates the evaluation metrics (Precision@k, Recall@k and F1@k) on the record type granularity level for the given true 
+    Calculates the evaluation metrics (ndcg@k, Precision@k, Recall@k and F1@k) on the record type granularity level for the given true 
     GND labels and predicted GND labels.
 
     Args:
@@ -204,7 +232,7 @@ def evaluate_record_type_level(true_dict: dict, predicted_dict: dict, k: int):
             
             #Aggregating the recall and precision for each record type
             if record_type not in metrics_score:
-                metrics_score[record_type] = {f'precision_{k}': 0, f'recall_{k}': 0, f'f1_{k}': 0, 'total_files': 0}
+                metrics_score[record_type] = {f'ndcg_{k}': 0, f'precision_{k}': 0, f'recall_{k}': 0, f'rprec_{k}': 0, f'f1_{k}': 0, 'total_files': 0}
             
             #Total files
             metrics_score[record_type]['total_files'] += len(file_data.keys())
@@ -214,14 +242,16 @@ def evaluate_record_type_level(true_dict: dict, predicted_dict: dict, k: int):
                 #Extracting the corresponding predicted GND labels
                 pred_labels = predicted_dict[record_type][language][f'{os.path.splitext(filename)[0]}.json']
                 
-                #Calculating the recall and precision at k
+                #Calculating the recall, precision, rprecision and ndcg at k
                 recall_k = recall(true_labels, pred_labels, k)
                 precision_k = precision(true_labels, pred_labels, k)
                 rprec_k = rprec(true_labels, pred_labels, k)
+                ndcg_k = ndcg(true_labels, pred_labels, k)
                 
                 metrics_score[record_type][f'recall_{k}'] += recall_k
                 metrics_score[record_type][f'precision_{k}'] += precision_k
                 metrics_score[record_type][f'rprec_{k}'] += rprec_k
+                metrics_score[record_type][f'ndcg_{k}'] += ndcg_k
             
     #Averaging recall and precision and calculating the f1 score
     for record_type, metrics in metrics_score.items():
@@ -229,6 +259,7 @@ def evaluate_record_type_level(true_dict: dict, predicted_dict: dict, k: int):
         metrics[f'recall_{k}'] = metrics[f'recall_{k}'] / total_files if total_files else 0.0
         metrics[f'precision_{k}'] = metrics[f'precision_{k}'] / total_files if total_files else 0.0
         metrics[f'rprec_{k}'] = metrics[f'rprec_{k}'] / total_files if total_files else 0.0
+        metrics[f'ndcg_{k}'] = metrics[f'ndcg_{k}'] / total_files if total_files else 0.0
         metrics[f'f1_{k}'] = f1(metrics[f'recall_{k}'], metrics[f'precision_{k}'])
         
         #Deleting the total files key and value
@@ -238,7 +269,7 @@ def evaluate_record_type_level(true_dict: dict, predicted_dict: dict, k: int):
 
 def evaluate_language_level(true_dict: dict, predicted_dict: dict, k: int):
     """
-    Calculates the evaluation metrics (Precision@k, Recall@k and F1@k) on the language granularity level for the given true 
+    Calculates the evaluation metrics (ndcg@k, Precision@k, Recall@k and F1@k) on the language granularity level for the given true 
     GND labels and predicted GND labels.
 
     Args:
@@ -259,7 +290,7 @@ def evaluate_language_level(true_dict: dict, predicted_dict: dict, k: int):
             
             #Aggregating the recall and precision for each record type
             if language not in metrics_score:
-                metrics_score[language] = {f'precision_{k}': 0, f'recall_{k}': 0, f'f1_{k}': 0, 'total_files': 0}
+                metrics_score[language] = {f'ndcg_{k}': 0, f'precision_{k}': 0, f'recall_{k}': 0, f'rprec_{k}': 0, f'f1_{k}': 0, 'total_files': 0}
             
             #Total files
             metrics_score[language]['total_files'] += len(file_data.keys())
@@ -273,10 +304,12 @@ def evaluate_language_level(true_dict: dict, predicted_dict: dict, k: int):
                 recall_k = recall(true_labels, pred_labels, k)
                 precision_k = precision(true_labels, pred_labels, k)
                 rprec_k = rprec(true_labels, pred_labels, k)
+                ndcg_k = ndcg(true_labels, pred_labels, k)
                 
                 metrics_score[language][f'recall_{k}'] += recall_k
                 metrics_score[language][f'precision_{k}'] += precision_k
                 metrics_score[language][f'rprec_{k}'] += rprec_k
+                metrics_score[language][f'ndcg_{k}'] += ndcg_k
             
     #Averaging recall and precision and calculating the f1 score
     for language, metrics in metrics_score.items():
@@ -284,6 +317,7 @@ def evaluate_language_level(true_dict: dict, predicted_dict: dict, k: int):
         metrics[f'recall_{k}'] = metrics[f'recall_{k}'] / total_files if total_files else 0.0
         metrics[f'precision_{k}'] = metrics[f'precision_{k}'] / total_files if total_files else 0.0
         metrics[f'rprec_{k}'] = metrics[f'rprec_{k}'] / total_files if total_files else 0.0
+        metrics[f'ndcg_{k}'] = metrics[f'ndcg_{k}'] / total_files if total_files else 0.0
         metrics[f'f1_{k}'] = f1(metrics[f'recall_{k}'], metrics[f'precision_{k}'])
         
         #Deleting the total files key and value
